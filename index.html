@@ -1,641 +1,695 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Đặc Sản Trà Vinh</title>
+    <!DOCTYPE html>
+    <html lang="vi">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặc Sản Trà Vinh</title>
 
-<style>
-/* RESET */
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:'Segoe UI',sans-serif;
-    background:#f4f7f6;
-    color:#333;
-    line-height:1.8;
-}
-
-/* NAVBAR */
-nav{
-    position:fixed;
-    top:0;
-    width:100%;
-    padding:18px 8%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    background:rgba(0,108,82,0.92);
-    backdrop-filter:blur(10px);
-    z-index:1000;
-    box-shadow:0 2px 10px rgba(0,0,0,.15);
-}
-
-.logo{
-    color:#fff;
-    font-size:30px;
-    font-weight:700;
-}
-
-nav ul{
-    display:flex;
-    list-style:none;
-}
-
-nav ul li{
-    margin-left:25px;
-}
-
-nav ul li a{
-    color:white;
-    text-decoration:none;
-    font-weight:500;
-    transition:.3s;
-}
-
-nav ul li a:hover{
-    color:#ffd54f;
-}
-
-/* HERO */
-.hero{
-    height:600px;
-    background:
-    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
-    url("tra-vinh-banner.jpg");
-    background-size:cover;
-    background-position:center;
-    display:flex;
-    align-items:center;
-}
-
-.hero-content{
-    margin-left:10%;
-    color:white;
-    animation:fadeUp 1s ease;
-}
-
-.hero-content h1{
-    font-size:70px;
-    margin-bottom:15px;
-}
-
-.hero-content p{
-    font-size:24px;
-    opacity:.95;
-}
-
-/* CONTAINER */
-.container{
-    width:90%;
-    max-width:1300px;
-    margin:60px auto;
-}
-
-/* CARD CHUNG */
-.intro,
-.toc,
-.contact{
-    background:white;
-    padding:30px;
-    border-radius:18px;
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
-}
-
-/* INTRO */
-.intro{
-    margin-bottom:40px;
-}
-
-.intro h2{
-    color:#006c52;
-    margin-bottom:15px;
-}
-
-/* TOC */
-.toc{
-    margin-bottom:50px;
-}
-
-.toc h2{
-    color:#006c52;
-    margin-bottom:20px;
-}
-
-.toc h3{
-    margin-top:20px;
-    color:#444;
-}
-
-.toc ul{
-    list-style:none;
-}
-
-.toc li{
-    margin:10px 0;
-}
-
-.toc a{
-    text-decoration:none;
-    color:#444;
-    transition:.3s;
-}
-
-.toc a:hover{
-    color:#006c52;
-    padding-left:8px;
-}
-
-/* GRID MÓN ĂN */
-.food-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
-    gap:30px;
-     align-items:stretch;
-}
-
-/* CARD */
-.food-item{
-    background:white;
-    border-radius:20px;
-    overflow:hidden;
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
-    transition:.35s;
-    
-    scroll-margin-top: 100px;
-    height:100%;
-    display:flex;
-    flex-direction:column;
-}
-
-
-.food-item:hover{
-    transform:translateY(-10px);
-    box-shadow:0 15px 35px rgba(0,0,0,.15);
-}
-
-.food-item img{
-    width:100%;
-    height:250px;
-    object-fit:cover;
-}
-
-.food-content{
-    padding:25px;
-     flex:1;
-}
-
-.food-content h2{
-    color:#006c52;
-    margin-bottom:12px;
-    font-size:28px;
-}
-
-/* CONTACT */
-.contact{
-    margin-top:60px;
-}
-
-.contact h2{
-    color:#006c52;
-    margin-bottom:20px;
-}
-
-.contact input,
-.contact textarea{
-    width:100%;
-    padding:15px;
-    border:1px solid #ddd;
-    border-radius:12px;
-    margin-bottom:15px;
-    font-size:16px;
-}
-
-.contact input:focus,
-.contact textarea:focus{
-    outline:none;
-    border-color:#006c52;
-}
-
-.contact button{
-    background:#006c52;
-    color:white;
-    border:none;
-    padding:15px;
-    border-radius:12px;
-    font-size:16px;
-    cursor:pointer;
-    transition:.3s;
-}
-
-.contact button:hover{
-    background:#004d3a;
-}
-
-/* FOOTER */
-footer{
-    background:#006c52;
-    color:white;
-    text-align:center;
-    padding:25px;
-    margin-top:60px;
-}
-
-/* ANIMATION */
-@keyframes fadeUp{
-    from{
-        opacity:0;
-        transform:translateY(30px);
+    <style>
+        
+    /* RESET */
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
     }
-    to{
-        opacity:1;
-        transform:translateY(0);
+
+    html{
+        scroll-behavior:smooth;
     }
-}
 
-/* MOBILE */
-@media(max-width:768px){
+    body{
+        font-family:'Segoe UI',sans-serif;
+        background:#f4f7f6;
+        color:#333;
+        line-height:1.8;
+    }
 
+    /* NAVBAR */
     nav{
-        flex-direction:column;
-        gap:10px;
+        position:fixed;
+        top:0;
+        width:100%;
+        padding:18px 8%;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        background:rgba(0,108,82,0.92);
+        backdrop-filter:blur(10px);
+        z-index:1000;
+        box-shadow:0 2px 10px rgba(0,0,0,.15);
+    }
+
+    .logo{
+        color:#fff;
+        font-size:30px;
+        font-weight:700;
     }
 
     nav ul{
-        flex-wrap:wrap;
-        justify-content:center;
+        display:flex;
+        list-style:none;
     }
 
+    nav ul li{
+        margin-left:25px;
+    }
+
+    nav ul li a{
+        color:white;
+        text-decoration:none;
+        font-weight:500;
+        transition:.3s;
+    }
+
+    nav ul li a:hover{
+        color:#ffd54f;
+    }
+    .nav-left{
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    /* HERO */
     .hero{
-        height:450px;
-        text-align:center;
-        justify-content:center;
+        height:600px;
+        background:
+        linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+        url("tra-vinh-banner.jpg");
+        background-size:cover;
+        background-position:center;
+        display:flex;
+        align-items:center;
     }
 
     .hero-content{
-        margin:0;
-        padding:20px;
+        margin-left:10%;
+        color:white;
+        animation:fadeUp 1s ease;
     }
 
     .hero-content h1{
-        font-size:42px;
+        font-size:70px;
+        margin-bottom:15px;
     }
 
     .hero-content p{
-        font-size:18px;
+        font-size:24px;
+        opacity:.95;
     }
+
+    /* CONTAINER */
+    .container{
+        width:90%;
+        max-width:1300px;
+        margin:60px auto;
+    }
+
+    /* CARD CHUNG */
+    .intro,
+    .toc,
+    .contact{
+        background:white;
+        padding:30px;
+        border-radius:18px;
+        box-shadow:0 10px 30px rgba(0,0,0,.08);
+    }
+
+    /* INTRO */
+    .intro{
+        margin-bottom:40px;
+    }
+
+    .intro h2{
+        color:#006c52;
+        margin-bottom:15px;
+    }
+
+    /* TOC */
+    .toc{
+        margin-bottom:50px;
+    }
+
+    .toc h2{
+        color:#006c52;
+        margin-bottom:20px;
+    }
+
+    .toc h3{
+        margin-top:20px;
+        color:#444;
+    }
+
+    .toc ul{
+        list-style:none;
+    }
+
+    .toc li{
+        margin:10px 0;
+    }
+
+    .toc a{
+        text-decoration:none;
+        color:#444;
+        transition:.3s;
+    }
+
+    .toc a:hover{
+        color:#006c52;
+        padding-left:8px;
+    }
+
+    /* GRID MÓN ĂN */
+    .food-grid{
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+        gap:30px;
+        align-items:stretch;
+    }
+
+    /* CARD */
+    .food-item{
+        background:white;
+        border-radius:20px;
+        overflow:hidden;
+        box-shadow:0 10px 25px rgba(0,0,0,.08);
+        transition:.35s;
+        
+        scroll-margin-top: 100px;
+        height:100%;
+        display:flex;
+        flex-direction:column;
+    }
+
+
+    .food-item:hover{
+        transform:translateY(-10px);
+        box-shadow:0 15px 35px rgba(0,0,0,.15);
+    }
+
+    .food-item img{
+        width:100%;
+        height:250px;
+        object-fit:cover;
+    }
+
+    .food-content{
+        padding:25px;
+        flex:1;
+    }
+
+    .food-content h2{
+        color:#006c52;
+        margin-bottom:12px;
+        font-size:28px;
+    }
+
+    /* CONTACT */
+    .contact{
+        margin-top:60px;
+    }
+
+    .contact h2{
+        color:#006c52;
+        margin-bottom:20px;
+    }
+
+    .contact input,
+    .contact textarea{
+        width:100%;
+        padding:15px;
+        border:1px solid #ddd;
+        border-radius:12px;
+        margin-bottom:15px;
+        font-size:16px;
+    }
+
+    .contact input:focus,
+    .contact textarea:focus{
+        outline:none;
+        border-color:#006c52;
+    }
+
+    .contact button{
+        background:#006c52;
+        color:white;
+        border:none;
+        padding:15px;
+        border-radius:12px;
+        font-size:16px;
+        cursor:pointer;
+        transition:.3s;
+    }
+
+    .contact button:hover{
+        background:#004d3a;
+    }
+
+    /* FOOTER */
+    footer{
+        background:#006c52;
+        color:white;
+        text-align:center;
+        padding:25px;
+        margin-top:60px;
+    }
+
+    /* ANIMATION */
+    @keyframes fadeUp{
+        from{
+            opacity:0;
+            transform:translateY(30px);
+        }
+        to{
+            opacity:1;
+            transform:translateY(0);
+        }
+    }
+
+    /* MOBILE */
+    @media(max-width:768px){
+
+        nav{
+            flex-direction:column;
+            gap:10px;
+        }
+
+        nav ul{
+            flex-wrap:wrap;
+            justify-content:center;
+        }
+
+        .hero{
+            height:450px;
+            text-align:center;
+            justify-content:center;
+        }
+
+        .hero-content{
+            margin:0;
+            padding:20px;
+        }
+
+        .hero-content h1{
+            font-size:42px;
+        }
+
+        .hero-content p{
+            font-size:18px;
+        }
+    }
+    html {
+        scroll-padding-top: 90px;
+    }
+    .section-title{
+        grid-column: 1 / -1;
+        font-size: 28px;
+        color:#006c52;
+        margin-bottom:10px;
+    }
+    #goBack{
+        position: fixed;
+        top: 90px;   /* dưới navbar */
+        left: 20px;
+        z-index: 9999;
+
+        padding: 10px 15px;
+        border: none;
+        border-radius: 10px;
+
+        background: #006c52;
+        color: white;
+        font-size: 16px;
+
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        transition: 0.3s;
+    }
+
+    #goBack:hover{
+        background: #004d3a;
+    }
+    #homeBtn{
+        background: white;
+        border: none;
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+        font-size: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    #homeBtn:hover{
+        background: #ffd54f;
+    }
+    </style>
+    </head>
+
+    <body>
+
+    <!-- MENU -->
+    <nav>
+    <div class="nav-left">
+        <button id="homeBtn">🏠</button>
+        <div class="logo">ĐẶC SẢN TRÀ VINH</div>
+    </div>
+        <ul>
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#muc-luc">Mục lục</a></li>
+            <li><a href="#bun-nuoc-leo">Đặc sản</a></li>
+            <li><a href="#lien-he">Liên hệ</a></li>
+        </ul>
+    </nav>
+
+    <!-- BANNER -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Đặc Sản Trà Vinh</h1>
+            <p>Hương vị miền Tây Nam Bộ</p>
+        </div>
+    </section>
+
+    <div class="container">
+
+        <!-- INTRO -->
+        <div class="intro">
+            <h2>Giới thiệu</h2>
+            <p>
+                Trà Vinh là một tỉnh thuộc vùng Đồng bằng sông Cửu Long, nổi tiếng với văn hóa Khmer đặc sắc và ẩm thực phong phú, mang đậm hương vị miền sông nước. Nơi đây là sự giao thoa văn hóa giữa người Kinh, Khmer và Hoa, tạo nên nhiều món ăn và đặc sản rất riêng, khó lẫn với các địa phương khác.
+
+    Một trong những đặc sản tiêu biểu nhất là bún nước lèo Trà Vinh – món bún có nước dùng đậm đà, được nấu từ mắm bò hóc của người Khmer, kết hợp với cá lóc, heo quay và các loại rau đồng. Hương vị vừa lạ vừa quen, thể hiện rõ bản sắc ẩm thực địa phương.
+
+    Bên cạnh đó, dừa sáp Cầu Kè là loại dừa quý hiếm, có phần cơm dừa dày, dẻo và béo ngậy, thường được dùng để làm sinh tố hoặc ăn trực tiếp. Đây là một trong những đặc sản nổi tiếng nhất của Trà Vinh, được nhiều du khách tìm mua.
+
+    Ngoài ra còn có bánh tét Trà Cuôn, một loại bánh tét truyền thống với nhân đậu xanh, thịt mỡ, trứng muối, được gói khéo léo bằng lá chuối, có hương vị thơm ngon và rất được ưa chuộng trong các dịp lễ Tết.
+
+    Tổng thể, ẩm thực Trà Vinh không chỉ ngon mà còn phản ánh rõ nét đời sống văn hóa của vùng đất Trà Vinh – một điểm đến hấp dẫn cho những ai yêu thích khám phá ẩm thực miền Tây.
+            </p>
+        </div>
+
+        <!-- MỤC LỤC -->
+    <div class="toc" id="muc-luc">
+        <h2>Mục lục</h2>
+
+        <h3>Món ăn</h3>
+        <ul>
+            <li><a href="#bun-nuoc-leo">Bún nước lèo</a></li>
+            <li><a href="#bun-suong">Bún suông</a></li>
+            <li><a href="#banh-canh-ben-co">Bánh canh Bến Có</a></li>
+            <li><a href="#chao-am">Cháo ám</a></li>
+            <li><a href="#chao-ca-khoai">Cháo cá khoai</a></li>
+            <li><a href="#chu-u-rang-me">Chù ụ rang me</a></li>
+            <li><a href="#loi-choi-nuong">Loi choi nướng sả ớt</a></li>
+            <li><a href="#heo-quay">Heo quay Trà Vinh</a></li>
+        </ul>
+
+        <h3>Đặc sản khô, mắm, quà mang về</h3>
+        <ul>
+            <li><a href="#banh-tet-tra-cuon">Bánh tét Trà Cuôn</a></li>
+            <li><a href="#banh-u-da-loc">Bánh ú Đa Lộc</a></li>
+            <li><a href="#tom-kho-vinh-kim">Tôm khô Vĩnh Kim</a></li>
+            <li><a href="#cha-hoa-nam-thuy">Chả hoa Năm Thụy</a></li>
+            <li><a href="#cu-cai-muoi">Củ cải muối Cầu Kè</a></li>
+            <li><a href="#banh-trang-tra-vinh">Bánh tráng Trà Vinh</a></li>
+            <li><a href="#mam-bo-hoc">Mắm bò hóc</a></li>
+            <li><a href="#nuoc-mam-ruoi">Nước mắm rươi Long Vinh</a></li>
+            <li><a href="#mut-ban">Mứt bần</a></li>
+        </ul>
+
+        <h3>Trái cây đặc sản</h3>
+        <ul>
+            <li><a href="#dua-sap">Dừa sáp Cầu Kè</a></li>
+            <li><a href="#chuoi-ta-qua">Chuối Tá Quạ</a></li>
+            <li><a href="#trai-quach">Trái quách</a></li>
+        </ul>
+    </div>
+        <!--Món Ăn-->
+    <section class="food-grid" id="mon-an">
+        <h2 class="section-title">Món ăn</h2>
+        <!--bun nuoc leo -->
+        <div class="food-item" id="bun-nuoc-leo">
+            <img src="bun-nuoc-leo.jpg">
+            <div class="food-content">
+                <h2>Bún nước lèo</h2>
+                <p>Bún nước lèo là một món bún nước dùng nổi tiếng của miền Tây Nam Bộ Việt Nam, đặc biệt gắn với Sóc Trăng.</p>
+                <p>Đặc điểm của món này:</p>
+                <p>Nước lèo được nấu từ mắm bò hóc (một loại mắm của người Khmer), tạo hương vị đậm đà đặc trưng.
+    Thường ăn với bún tươi, cá lóc, tôm, đôi khi có thịt heo quay.
+    Ăn kèm nhiều loại rau sống như bắp chuối bào, giá đỗ, hẹ, rau muống bào, rau thơm.
+    Vị nước dùng thường thanh ngọt từ xương và hải sản nhưng vẫn có mùi thơm đặc trưng của mắm.</p>
+                
+            </div>
+            </div>
+            <!--bun suong-->
+            <div class="food-item" id="bun-suong">
+        <img src="bun-suong.jpg" alt="Bún suông">
+        <div class="food-content">
+            <h2>Bún suông</h2>
+            <p>Bún suông là món ăn đặc trưng của Trà Vinh với phần suông làm từ tôm xay nhuyễn tạo hình dài.</p>
+            <p>Nước dùng ngọt thanh từ xương và tôm, ăn kèm rau sống rất hấp dẫn.</p>
+        </div>
+    </div>
+
+    <!-- BÁNH CANH BẾN CÓ -->
+    <div class="food-item" id="banh-canh-ben-co">
+        <img src="banh-canh-ben-co.jpg" alt="Bánh canh Bến Có">
+        <div class="food-content">
+            <h2>Bánh canh Bến Có</h2>
+            <p>Đặc sản nổi tiếng của huyện Châu Thành, Trà Vinh.</p>
+            <p>Sợi bánh dai mềm, nước dùng đậm đà nấu từ xương heo.</p>
+        </div>
+    </div>
+
+    <!-- CHÁO ÁM -->
+    <div class="food-item" id="chao-am">
+        <img src="chao-am.jpg" alt="Cháo ám">
+        <div class="food-content">
+            <h2>Cháo ám</h2>
+            <p>Món ăn truyền thống của người Khmer ở Trà Vinh.</p>
+            <p>Cháo được nấu từ cá lóc đồng, gạo rang và rau thơm.</p>
+        </div>
+    </div>
+
+    <!-- CHÁO CÁ KHOAI -->
+    <div class="food-item" id="chao-ca-khoai">
+        <img src="chao-ca-khoai.jpg" alt="Cháo cá khoai">
+        <div class="food-content">
+            <h2>Cháo cá khoai</h2>
+            <p>Món cháo dân dã với thịt cá khoai mềm và ngọt.</p>
+            <p>Thường ăn nóng cùng hành lá và tiêu xay.</p>
+        </div>
+    </div>
+
+    <!-- CHÙ Ụ RANG ME -->
+    <div class="food-item" id="chu-u-rang-me">
+            <img src="chu-u-rang-me.jpg">
+            <div class="food-content">
+                <h2>Chù ụ rang me</h2>
+                <p>“Chù ụ rang me” là món đặc sản khá quen ở miền Tây, làm từ con chù ụ (một loài cua/càng nhỏ sống vùng bãi bùn, thường gặp ở Cà Mau – Bạc Liêu).</p>
+                <p>điểm đặc biệt của món này:</p>
+                <P>Chù ụ rang me: dùng chù ụ tươi sống ở vùng bãi bùn miền Tây, thường được sơ chế sạch rồi chiên sơ để giữ độ giòn. Sốt me được nấu từ me chín, tạo vị chua ngọt đậm đà đặc trưng.
+    Hương vị đặc trưng: kết hợp giữa vị chua thanh của me, vị mặn ngọt của nước mắm đường và vị béo nhẹ từ phần gạch và thịt chù ụ.Trải nghiệm ăn uống: món ăn mang vị chua – ngọt – cay hài hòa, ăn kèm cơm nóng hoặc làm món nhậu đều rất hợp, tạo cảm giác dân dã nhưng đậm đà khó quên.</P>
+            </div>
+        </div>
+
+    <!-- LOI CHOI NƯỚNG SẢ ỚT -->
+    <div class="food-item" id="loi-choi-nuong">
+        <img src="loi-choi-nuong.jpg" alt="Loi choi nướng sả ớt">
+        <div class="food-content">
+            <h2>Loi choi nướng sả ớt</h2>
+            <p>Cá loi choi được ướp sả, ớt rồi nướng trên than hồng.</p>
+            <p>Món ăn có hương vị cay thơm và đậm chất miền Tây.</p>
+        </div>
+    </div>
+
+    <!-- HEO QUAY -->
+    <div class="food-item" id="heo-quay">
+        <img src="heo-quay.jpg" alt="Heo quay Trà Vinh">
+        <div class="food-content">
+            <h2>Heo quay Trà Vinh</h2>
+            <p>Món ăn nổi tiếng của cộng đồng Khmer Nam Bộ.</p>
+            <p>Da giòn rụm, thịt mềm và thơm ngon.</p>
+        </div>
+    </div>
+    </section>
+    <!--Đặc sản khô, mắm, quà mang về-->
+    <section class="food-grid" id="dac-san">
+        <h2 class="section-title">Đặc sản khô, mắm, quà mang về</h2>
+    <!--banh tet-->
+        <div class="food-item" id="banh-tet-tra-cuon">
+            <img src="banh-tet.jpg">
+            <div class="food-content">
+                <h2>Bánh tét Trà Cuôn</h2>
+                <p>Bánh tét Trà Cuôn là một loại bánh tét nổi tiếng của vùng Trà Cú – Trà Vinh, đặc biệt được nhiều người miền Tây xem như món bánh truyền thống không thể thiếu dịp lễ Tết.</p>
+                <P>Đặc điểm nổi bật:</P>
+                <p>Nếp dẻo thơm: dùng nếp ngon, thường được ngâm lá dứa hoặc nước tro để tạo màu và mùi thơm nhẹ
+    Nhân mặn đặc trưng: gồm thịt heo ba rọi, đậu xanh, trứng muối
+    Gói bằng lá chuối: buộc chặt thành đòn dài, sau đó luộc nhiều giờ
+    Vị béo – mặn – ngọt hài hòa, ăn không ngán dù khá nhiều đạm.</p>
+            </div>
+        </div>
+        <!-- BÁNH Ú ĐA LỘC -->
+    <div class="food-item" id="banh-u-da-loc">
+        <img src="banh-u-da-loc.jpg" alt="Bánh ú Đa Lộc">
+        <div class="food-content">
+            <h2>Bánh ú Đa Lộc</h2>
+            <p>Bánh được làm từ nếp dẻo với nhân đậu xanh hoặc thịt heo.</p>
+            <p>Hương thơm đặc trưng từ lá gói truyền thống.</p>
+        </div>
+    </div>
+
+    <!-- TÔM KHÔ VĨNH KIM -->
+    <div class="food-item" id="tom-kho-vinh-kim">
+        <img src="tom-kho-vinh-kim.jpg" alt="Tôm khô Vĩnh Kim">
+        <div class="food-content">
+            <h2>Tôm khô Vĩnh Kim</h2>
+            <p>Tôm được chế biến từ nguồn nguyên liệu tươi ngon tự nhiên.</p>
+            <p>Là món quà đặc sản được nhiều người lựa chọn.</p>
+        </div>
+    </div>
+
+    <!-- CHẢ HOA NĂM THỤY -->
+    <div class="food-item" id="cha-hoa-nam-thuy">
+        <img src="cha-hoa-nam-thuy.jpg" alt="Chả hoa Năm Thụy">
+        <div class="food-content">
+            <h2>Chả hoa Năm Thụy</h2>
+            <p>Chả được làm từ thịt heo và trứng muối.</p>
+            <p>Khi cắt ra có hình dạng như bông hoa đẹp mắt.</p>
+        </div>
+    </div>
+
+    <!-- CỦ CẢI MUỐI CẦU KÈ -->
+    <div class="food-item" id="cu-cai-muoi">
+        <img src="cu-cai-muoi.jpg" alt="Củ cải muối Cầu Kè">
+        <div class="food-content">
+            <h2>Củ cải muối Cầu Kè</h2>
+            <p>Được chế biến theo phương pháp truyền thống.</p>
+            <p>Vị mặn ngọt hài hòa, thường dùng trong món kho.</p>
+        </div>
+    </div>
+
+    <!-- BÁNH TRÁNG TRÀ VINH -->
+    <div class="food-item" id="banh-trang-tra-vinh">
+        <img src="banh-trang-tra-vinh.jpg" alt="Bánh tráng Trà Vinh">
+        <div class="food-content">
+            <h2>Bánh tráng Trà Vinh</h2>
+            <p>Bánh tráng được làm từ gạo ngon của địa phương.</p>
+            <p>Có thể dùng để cuốn hoặc nướng giòn.</p>
+        </div>
+    </div>
+    <!-- Mam Bo Hoc -->
+    <div class="food-item" id="mam-bo-hoc">
+            <img src="mam-bo-hoc.jpg">
+            <div class="food-content">
+                <h2>Mắm bò hóc</h2>
+                <p>Mắm bò hóc (còn gọi là prahok trong tiếng Khmer) là một loại mắm cá lên men rất đặc trưng của cộng đồng Khmer ở Nam Bộ, Việt Nam và Campuchia.</p>
+                <p>Đặc điểm hương vị:</p>
+                <P>Làm từ cá ủ muối lên men tự nhiên trong thời gian dài
+    Là gia vị “linh hồn” của ẩm thực Khmer và miền Tây Nam Bộ
+    Có mùi rất mạnh, nhưng khi nấu chín lại tạo hương thơm đặc trưng
+    Tạo vị umami đậm sâu, giúp món ăn ngọt nước hơn mà không cần nhiều gia vị khác
+    Không dùng để ăn riêng nhiều, chủ yếu dùng làm nền nấu như bún nước lèo, canh, lẩu.</P>
+            </div>
+        </div>
+    <!-- NƯỚC MẮM RƯƠI -->
+    <div class="food-item" id="nuoc-mam-ruoi">
+        <img src="nuoc-mam-ruoi.jpg" alt="Nước mắm rươi Long Vinh">
+        <div class="food-content">
+            <h2>Nước mắm rươi Long Vinh</h2>
+            <p>Loại nước mắm truyền thống được sản xuất từ rươi tự nhiên.</p>
+            <p>Hương vị đậm đà, đặc trưng vùng ven biển Trà Vinh.</p>
+        </div>
+    </div>
+
+    <!-- MỨT BẦN -->
+    <div class="food-item" id="mut-ban">
+        <img src="mut-ban.jpg" alt="Mứt bần">
+        <div class="food-content">
+            <h2>Mứt bần</h2>
+            <p>Được làm từ trái bần của vùng đất ngập mặn.</p>
+            <p>Có vị chua ngọt độc đáo, thích hợp làm quà.</p>
+        </div>
+    </div>
+    </section>
+    <!--Trái cây đặc sản-->
+        <section class="food-grid" id="trai-cay">
+            <h2 class="section-title">Trái cây đặc sản</h2>
+            <!-- dua sap -->
+    <div class="food-item" id="dua-sap">
+            <img src="dua-sap.jpg">
+            <div class="food-content">
+                <h2>Dừa sáp</h2>
+                <p>Dừa sáp là một loại dừa đặc biệt và rất hiếm ở Việt Nam, nổi tiếng nhất ở vùng Cầu Kè – Trà Vinh.</p>
+                <P>Điểm đặc biệt của dừa sáp:</P>
+                <p>Cơm dừa dày, dẻo và “sáp” (giống như kem đặc), không cứng như dừa thường
+    Nước dừa rất ít hoặc gần như sệt, có quả gần như không có nước
+    Mùi thơm béo, vị ngọt nhẹ, ăn rất “ngậy”
+    Không phải trái nào trên cây cũng là dừa sáp — thường chỉ một phần nhỏ cho ra “sáp”.</p>
+            </div>
+        </div>
+        <!-- CHUỐI TÁ QUẠ -->
+    <div class="food-item" id="chuoi-ta-qua">
+        <img src="chuoi-ta-qua.jpg" alt="Chuối Tá Quạ">
+        <div class="food-content">
+            <h2>Chuối Tá Quạ</h2>
+            <p>Giống chuối nổi tiếng với kích thước lớn.</p>
+            <p>Thịt chuối dẻo, thơm và ngọt đậm.</p>
+        </div>
+    </div>
+
+    <!-- TRÁI QUÁCH -->
+    <div class="food-item" id="trai-quach">
+        <img src="trai-quach.jpg" alt="Trái quách">
+        <div class="food-content">
+            <h2>Trái quách</h2>
+            <p>Loại trái cây đặc sản gắn liền với văn hóa Khmer Trà Vinh.</p>
+            <p>Thường dùng làm sinh tố, nước giải khát hoặc dầm đường.</p>
+        </div>
+    </div>
+    </section>
+        <!-- CONTACT -->
+        <div class="contact" id="lien-he">
+            <h2>Liên hệ</h2>
+
+            <form onsubmit="sendForm(event)">
+                <input type="email" id="email" placeholder="Nhập Gmail" required>
+                <textarea id="message" rows="5" placeholder="Nội dung..." required></textarea>
+                <button type="submit">Gửi</button>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        © 2026 - Trà Vinh Food
+    </footer>
+
+    <!-- JS -->
+    <script>
+        const goBackBtn = document.getElementById("goBack");
+
+if (goBackBtn) {
+    goBackBtn.addEventListener("click", function () {
+        window.history.back();
+    });
 }
-html {
-    scroll-padding-top: 90px;
-}
-.section-title{
-    grid-column: 1 / -1;
-    font-size: 28px;
-    color:#006c52;
-    margin-bottom:10px;
-}
-</style>
-</head>
+    function sendForm(event){
+        event.preventDefault();
 
-<body>
+        let email = document.getElementById("email").value;
+        let message = document.getElementById("message").value;
 
-<!-- MENU -->
-<nav>
-    <div class="logo">ĐẶC SẢN TRÀ VINH</div>
-    <ul>
-        <li><a href="#">Trang chủ</a></li>
-        <li><a href="#muc-luc">Mục lục</a></li>
-        <li><a href="#bun-nuoc-leo">Đặc sản</a></li>
-        <li><a href="#lien-he">Liên hệ</a></li>
-    </ul>
-</nav>
+        alert("Gửi thành công!\nEmail: " + email);
 
-<!-- BANNER -->
-<section class="hero">
-    <div class="hero-content">
-        <h1>Đặc Sản Trà Vinh</h1>
-        <p>Hương vị miền Tây Nam Bộ</p>
-    </div>
-</section>
+        document.getElementById("email").value = "";
+        document.getElementById("message").value = "";
+    }
+    document.getElementById("homeBtn").addEventListener("click", function(){
+       window.history.back();
+    });
+    </script>
 
-<div class="container">
-
-    <!-- INTRO -->
-    <div class="intro">
-        <h2>Giới thiệu</h2>
-        <p>
-            Trà Vinh là một tỉnh thuộc vùng Đồng bằng sông Cửu Long, nổi tiếng với văn hóa Khmer đặc sắc và ẩm thực phong phú, mang đậm hương vị miền sông nước. Nơi đây là sự giao thoa văn hóa giữa người Kinh, Khmer và Hoa, tạo nên nhiều món ăn và đặc sản rất riêng, khó lẫn với các địa phương khác.
-
-Một trong những đặc sản tiêu biểu nhất là bún nước lèo Trà Vinh – món bún có nước dùng đậm đà, được nấu từ mắm bò hóc của người Khmer, kết hợp với cá lóc, heo quay và các loại rau đồng. Hương vị vừa lạ vừa quen, thể hiện rõ bản sắc ẩm thực địa phương.
-
-Bên cạnh đó, dừa sáp Cầu Kè là loại dừa quý hiếm, có phần cơm dừa dày, dẻo và béo ngậy, thường được dùng để làm sinh tố hoặc ăn trực tiếp. Đây là một trong những đặc sản nổi tiếng nhất của Trà Vinh, được nhiều du khách tìm mua.
-
-Ngoài ra còn có bánh tét Trà Cuôn, một loại bánh tét truyền thống với nhân đậu xanh, thịt mỡ, trứng muối, được gói khéo léo bằng lá chuối, có hương vị thơm ngon và rất được ưa chuộng trong các dịp lễ Tết.
-
-Tổng thể, ẩm thực Trà Vinh không chỉ ngon mà còn phản ánh rõ nét đời sống văn hóa của vùng đất Trà Vinh – một điểm đến hấp dẫn cho những ai yêu thích khám phá ẩm thực miền Tây.
-        </p>
-    </div>
-
-    <!-- MỤC LỤC -->
-<div class="toc" id="muc-luc">
-    <h2>Mục lục</h2>
-
-    <h3>Món ăn</h3>
-    <ul>
-        <li><a href="#bun-nuoc-leo">Bún nước lèo</a></li>
-        <li><a href="#bun-suong">Bún suông</a></li>
-        <li><a href="#banh-canh-ben-co">Bánh canh Bến Có</a></li>
-        <li><a href="#chao-am">Cháo ám</a></li>
-        <li><a href="#chao-ca-khoai">Cháo cá khoai</a></li>
-        <li><a href="#chu-u-rang-me">Chù ụ rang me</a></li>
-        <li><a href="#loi-choi-nuong">Loi choi nướng sả ớt</a></li>
-        <li><a href="#heo-quay">Heo quay Trà Vinh</a></li>
-    </ul>
-
-    <h3>Đặc sản khô, mắm, quà mang về</h3>
-    <ul>
-        <li><a href="#banh-tet-tra-cuon">Bánh tét Trà Cuôn</a></li>
-        <li><a href="#banh-u-da-loc">Bánh ú Đa Lộc</a></li>
-        <li><a href="#tom-kho-vinh-kim">Tôm khô Vĩnh Kim</a></li>
-        <li><a href="#cha-hoa-nam-thuy">Chả hoa Năm Thụy</a></li>
-        <li><a href="#cu-cai-muoi">Củ cải muối Cầu Kè</a></li>
-        <li><a href="#banh-trang-tra-vinh">Bánh tráng Trà Vinh</a></li>
-        <li><a href="#mam-bo-hoc">Mắm bò hóc</a></li>
-        <li><a href="#nuoc-mam-ruoi">Nước mắm rươi Long Vinh</a></li>
-        <li><a href="#mut-ban">Mứt bần</a></li>
-    </ul>
-
-    <h3>Trái cây đặc sản</h3>
-    <ul>
-        <li><a href="#dua-sap">Dừa sáp Cầu Kè</a></li>
-        <li><a href="#chuoi-ta-qua">Chuối Tá Quạ</a></li>
-        <li><a href="#trai-quach">Trái quách</a></li>
-    </ul>
-</div>
-    <!--Món Ăn-->
-   <section class="food-grid" id="mon-an">
-      <h2 class="section-title">Món ăn</h2>
-       <!--bun nuoc leo -->
-    <div class="food-item" id="bun-nuoc-leo">
-        <img src="bun-nuoc-leo.jpg">
-        <div class="food-content">
-            <h2>Bún nước lèo</h2>
-            <p>Bún nước lèo là một món bún nước dùng nổi tiếng của miền Tây Nam Bộ Việt Nam, đặc biệt gắn với Sóc Trăng.</p>
-            <p>Đặc điểm của món này:</p>
-            <p>Nước lèo được nấu từ mắm bò hóc (một loại mắm của người Khmer), tạo hương vị đậm đà đặc trưng.
-Thường ăn với bún tươi, cá lóc, tôm, đôi khi có thịt heo quay.
-Ăn kèm nhiều loại rau sống như bắp chuối bào, giá đỗ, hẹ, rau muống bào, rau thơm.
-Vị nước dùng thường thanh ngọt từ xương và hải sản nhưng vẫn có mùi thơm đặc trưng của mắm.</p>
-            
-        </div>
-        </div>
-        <!--bun suong-->
-        <div class="food-item" id="bun-suong">
-    <img src="bun-suong.jpg" alt="Bún suông">
-    <div class="food-content">
-        <h2>Bún suông</h2>
-        <p>Bún suông là món ăn đặc trưng của Trà Vinh với phần suông làm từ tôm xay nhuyễn tạo hình dài.</p>
-        <p>Nước dùng ngọt thanh từ xương và tôm, ăn kèm rau sống rất hấp dẫn.</p>
-    </div>
-</div>
-
-<!-- BÁNH CANH BẾN CÓ -->
-<div class="food-item" id="banh-canh-ben-co">
-    <img src="banh-canh-ben-co.jpg" alt="Bánh canh Bến Có">
-    <div class="food-content">
-        <h2>Bánh canh Bến Có</h2>
-        <p>Đặc sản nổi tiếng của huyện Châu Thành, Trà Vinh.</p>
-        <p>Sợi bánh dai mềm, nước dùng đậm đà nấu từ xương heo.</p>
-    </div>
-</div>
-
-<!-- CHÁO ÁM -->
-<div class="food-item" id="chao-am">
-    <img src="chao-am.jpg" alt="Cháo ám">
-    <div class="food-content">
-        <h2>Cháo ám</h2>
-        <p>Món ăn truyền thống của người Khmer ở Trà Vinh.</p>
-        <p>Cháo được nấu từ cá lóc đồng, gạo rang và rau thơm.</p>
-    </div>
-</div>
-
-<!-- CHÁO CÁ KHOAI -->
-<div class="food-item" id="chao-ca-khoai">
-    <img src="chao-ca-khoai.jpg" alt="Cháo cá khoai">
-    <div class="food-content">
-        <h2>Cháo cá khoai</h2>
-        <p>Món cháo dân dã với thịt cá khoai mềm và ngọt.</p>
-        <p>Thường ăn nóng cùng hành lá và tiêu xay.</p>
-    </div>
-</div>
-
-<!-- CHÙ Ụ RANG ME -->
-<div class="food-item" id="chu-u-rang-me">
-        <img src="chu-u-rang-me.jpg">
-        <div class="food-content">
-            <h2>Chù ụ rang me</h2>
-            <p>“Chù ụ rang me” là món đặc sản khá quen ở miền Tây, làm từ con chù ụ (một loài cua/càng nhỏ sống vùng bãi bùn, thường gặp ở Cà Mau – Bạc Liêu).</p>
-            <p>điểm đặc biệt của món này:</p>
-            <P>Chù ụ rang me: dùng chù ụ tươi sống ở vùng bãi bùn miền Tây, thường được sơ chế sạch rồi chiên sơ để giữ độ giòn. Sốt me được nấu từ me chín, tạo vị chua ngọt đậm đà đặc trưng.
-Hương vị đặc trưng: kết hợp giữa vị chua thanh của me, vị mặn ngọt của nước mắm đường và vị béo nhẹ từ phần gạch và thịt chù ụ.Trải nghiệm ăn uống: món ăn mang vị chua – ngọt – cay hài hòa, ăn kèm cơm nóng hoặc làm món nhậu đều rất hợp, tạo cảm giác dân dã nhưng đậm đà khó quên.</P>
-        </div>
-    </div>
-
-<!-- LOI CHOI NƯỚNG SẢ ỚT -->
-<div class="food-item" id="loi-choi-nuong">
-    <img src="loi-choi-nuong.jpg" alt="Loi choi nướng sả ớt">
-    <div class="food-content">
-        <h2>Loi choi nướng sả ớt</h2>
-        <p>Cá loi choi được ướp sả, ớt rồi nướng trên than hồng.</p>
-        <p>Món ăn có hương vị cay thơm và đậm chất miền Tây.</p>
-    </div>
-</div>
-
-<!-- HEO QUAY -->
-<div class="food-item" id="heo-quay">
-    <img src="heo-quay.jpg" alt="Heo quay Trà Vinh">
-    <div class="food-content">
-        <h2>Heo quay Trà Vinh</h2>
-        <p>Món ăn nổi tiếng của cộng đồng Khmer Nam Bộ.</p>
-        <p>Da giòn rụm, thịt mềm và thơm ngon.</p>
-    </div>
-</div>
-</section>
-  <!--Đặc sản khô, mắm, quà mang về-->
-  <section class="food-grid" id="dac-san">
-     <h2 class="section-title">Đặc sản khô, mắm, quà mang về</h2>
-  <!--banh tet-->
-    <div class="food-item" id="banh-tet-tra-cuon">
-        <img src="banh-tet.jpg">
-        <div class="food-content">
-            <h2>Bánh tét Trà Cuôn</h2>
-            <p>Bánh tét Trà Cuôn là một loại bánh tét nổi tiếng của vùng Trà Cú – Trà Vinh, đặc biệt được nhiều người miền Tây xem như món bánh truyền thống không thể thiếu dịp lễ Tết.</p>
-            <P>Đặc điểm nổi bật:</P>
-            <p>Nếp dẻo thơm: dùng nếp ngon, thường được ngâm lá dứa hoặc nước tro để tạo màu và mùi thơm nhẹ
-Nhân mặn đặc trưng: gồm thịt heo ba rọi, đậu xanh, trứng muối
-Gói bằng lá chuối: buộc chặt thành đòn dài, sau đó luộc nhiều giờ
-Vị béo – mặn – ngọt hài hòa, ăn không ngán dù khá nhiều đạm.</p>
-        </div>
-    </div>
-    <!-- BÁNH Ú ĐA LỘC -->
-<div class="food-item" id="banh-u-da-loc">
-    <img src="banh-u-da-loc.jpg" alt="Bánh ú Đa Lộc">
-    <div class="food-content">
-        <h2>Bánh ú Đa Lộc</h2>
-        <p>Bánh được làm từ nếp dẻo với nhân đậu xanh hoặc thịt heo.</p>
-        <p>Hương thơm đặc trưng từ lá gói truyền thống.</p>
-    </div>
-</div>
-
-<!-- TÔM KHÔ VĨNH KIM -->
-<div class="food-item" id="tom-kho-vinh-kim">
-    <img src="tom-kho-vinh-kim.jpg" alt="Tôm khô Vĩnh Kim">
-    <div class="food-content">
-        <h2>Tôm khô Vĩnh Kim</h2>
-        <p>Tôm được chế biến từ nguồn nguyên liệu tươi ngon tự nhiên.</p>
-        <p>Là món quà đặc sản được nhiều người lựa chọn.</p>
-    </div>
-</div>
-
-<!-- CHẢ HOA NĂM THỤY -->
-<div class="food-item" id="cha-hoa-nam-thuy">
-    <img src="cha-hoa-nam-thuy.jpg" alt="Chả hoa Năm Thụy">
-    <div class="food-content">
-        <h2>Chả hoa Năm Thụy</h2>
-        <p>Chả được làm từ thịt heo và trứng muối.</p>
-        <p>Khi cắt ra có hình dạng như bông hoa đẹp mắt.</p>
-    </div>
-</div>
-
-<!-- CỦ CẢI MUỐI CẦU KÈ -->
-<div class="food-item" id="cu-cai-muoi">
-    <img src="cu-cai-muoi.jpg" alt="Củ cải muối Cầu Kè">
-    <div class="food-content">
-        <h2>Củ cải muối Cầu Kè</h2>
-        <p>Được chế biến theo phương pháp truyền thống.</p>
-        <p>Vị mặn ngọt hài hòa, thường dùng trong món kho.</p>
-    </div>
-</div>
-
-<!-- BÁNH TRÁNG TRÀ VINH -->
-<div class="food-item" id="banh-trang-tra-vinh">
-    <img src="banh-trang-tra-vinh.jpg" alt="Bánh tráng Trà Vinh">
-    <div class="food-content">
-        <h2>Bánh tráng Trà Vinh</h2>
-        <p>Bánh tráng được làm từ gạo ngon của địa phương.</p>
-        <p>Có thể dùng để cuốn hoặc nướng giòn.</p>
-    </div>
-</div>
-<!-- Mam Bo Hoc -->
-<div class="food-item" id="mam-bo-hoc">
-        <img src="mam-bo-hoc.jpg">
-        <div class="food-content">
-            <h2>Mắm bò hóc</h2>
-            <p>Mắm bò hóc (còn gọi là prahok trong tiếng Khmer) là một loại mắm cá lên men rất đặc trưng của cộng đồng Khmer ở Nam Bộ, Việt Nam và Campuchia.</p>
-            <p>Đặc điểm hương vị:</p>
-            <P>Làm từ cá ủ muối lên men tự nhiên trong thời gian dài
-Là gia vị “linh hồn” của ẩm thực Khmer và miền Tây Nam Bộ
-Có mùi rất mạnh, nhưng khi nấu chín lại tạo hương thơm đặc trưng
-Tạo vị umami đậm sâu, giúp món ăn ngọt nước hơn mà không cần nhiều gia vị khác
-Không dùng để ăn riêng nhiều, chủ yếu dùng làm nền nấu như bún nước lèo, canh, lẩu.</P>
-        </div>
-    </div>
-<!-- NƯỚC MẮM RƯƠI -->
-<div class="food-item" id="nuoc-mam-ruoi">
-    <img src="nuoc-mam-ruoi.jpg" alt="Nước mắm rươi Long Vinh">
-    <div class="food-content">
-        <h2>Nước mắm rươi Long Vinh</h2>
-        <p>Loại nước mắm truyền thống được sản xuất từ rươi tự nhiên.</p>
-        <p>Hương vị đậm đà, đặc trưng vùng ven biển Trà Vinh.</p>
-    </div>
-</div>
-
-<!-- MỨT BẦN -->
-<div class="food-item" id="mut-ban">
-    <img src="mut-ban.jpg" alt="Mứt bần">
-    <div class="food-content">
-        <h2>Mứt bần</h2>
-        <p>Được làm từ trái bần của vùng đất ngập mặn.</p>
-        <p>Có vị chua ngọt độc đáo, thích hợp làm quà.</p>
-    </div>
-</div>
-</section>
-<!--Trái cây đặc sản-->
-    <section class="food-grid" id="trai-cay">
-        <h2 class="section-title">Trái cây đặc sản</h2>
-           <!-- dua sap -->
-<div class="food-item" id="dua-sap">
-        <img src="dua-sap.jpg">
-        <div class="food-content">
-            <h2>Dừa sáp</h2>
-            <p>Dừa sáp là một loại dừa đặc biệt và rất hiếm ở Việt Nam, nổi tiếng nhất ở vùng Cầu Kè – Trà Vinh.</p>
-            <P>Điểm đặc biệt của dừa sáp:</P>
-            <p>Cơm dừa dày, dẻo và “sáp” (giống như kem đặc), không cứng như dừa thường
-Nước dừa rất ít hoặc gần như sệt, có quả gần như không có nước
-Mùi thơm béo, vị ngọt nhẹ, ăn rất “ngậy”
-Không phải trái nào trên cây cũng là dừa sáp — thường chỉ một phần nhỏ cho ra “sáp”.</p>
-        </div>
-    </div>
-    <!-- CHUỐI TÁ QUẠ -->
-<div class="food-item" id="chuoi-ta-qua">
-    <img src="chuoi-ta-qua.jpg" alt="Chuối Tá Quạ">
-    <div class="food-content">
-        <h2>Chuối Tá Quạ</h2>
-        <p>Giống chuối nổi tiếng với kích thước lớn.</p>
-        <p>Thịt chuối dẻo, thơm và ngọt đậm.</p>
-    </div>
-</div>
-
-<!-- TRÁI QUÁCH -->
-<div class="food-item" id="trai-quach">
-    <img src="trai-quach.jpg" alt="Trái quách">
-    <div class="food-content">
-        <h2>Trái quách</h2>
-        <p>Loại trái cây đặc sản gắn liền với văn hóa Khmer Trà Vinh.</p>
-        <p>Thường dùng làm sinh tố, nước giải khát hoặc dầm đường.</p>
-    </div>
-</div>
-</section>
-    <!-- CONTACT -->
-    <div class="contact" id="lien-he">
-        <h2>Liên hệ</h2>
-
-        <form onsubmit="sendForm(event)">
-            <input type="email" id="email" placeholder="Nhập Gmail" required>
-            <textarea id="message" rows="5" placeholder="Nội dung..." required></textarea>
-            <button type="submit">Gửi</button>
-        </form>
-    </div>
-
-</div>
-
-<!-- FOOTER -->
-<footer>
-    © 2026 - Trà Vinh Food
-</footer>
-
-<!-- JS -->
-<script>
-function sendForm(event){
-    event.preventDefault();
-
-    let email = document.getElementById("email").value;
-    let message = document.getElementById("message").value;
-
-    alert("Gửi thành công!\nEmail: " + email);
-
-    document.getElementById("email").value = "";
-    document.getElementById("message").value = "";
-}
-</script>
-
-</body>
-</html>
+    </body>
+    </html>
