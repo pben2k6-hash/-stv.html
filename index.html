@@ -343,6 +343,25 @@
     #homeBtn:hover{
         background: #ffd54f;
     }
+        .search-box{
+    width:90%;
+    max-width:600px;
+    margin:110px auto 30px;
+    text-align:center;
+}
+
+.search-box input{
+    width:100%;
+    padding:15px 20px;
+    border-radius:30px;
+    border:2px solid #006c52;
+    font-size:18px;
+    outline:none;
+}
+
+.search-box input:focus{
+    box-shadow:0 0 10px rgba(0,108,82,.3);
+}
     </style>
     </head>
 
@@ -361,6 +380,13 @@
             <li><a href="#lien-he">Liên hệ</a></li>
         </ul>
     </nav>
+        <div class="search-box">
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="🔍 Tìm kiếm đặc sản..."
+        onkeyup="searchFood()">
+</div>
 
     <!-- BANNER -->
     <section class="hero">
@@ -741,6 +767,26 @@ if (goBackBtn) {
     document.getElementById("homeBtn").addEventListener("click", function(){
        window.history.back();
     });
+        
+        function searchFood(){
+
+    let input = document.getElementById("searchInput").value.toLowerCase();
+
+    let foods = document.querySelectorAll(".food-item");
+
+    foods.forEach(function(food){
+
+        let text = food.innerText.toLowerCase();
+
+        if(text.includes(input)){
+            food.style.display = "flex";
+        }else{
+            food.style.display = "none";
+        }
+
+    });
+
+}
     </script>
 
     </body>
